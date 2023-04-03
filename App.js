@@ -8,6 +8,7 @@ import MapScreen from './src/components/MapScreen';
 import ProfileScreen from './src/components/ProfileScreen';
 import SignupScreen from './src/components/SignupScreen';
 import MessagingScreen from './src/components/MessagingScreen';
+import ProfileEditScreen from './src/components/ProfileEditScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Message" component={MessagingScreen} />
+        <Stack.Screen name="ProfileEdit" component={ProfileEditScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
