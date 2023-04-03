@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
+import styles from './styles';
 import axios from 'axios';
 
 const LoginScreen = ({ navigation }) => {
@@ -26,11 +27,11 @@ const LoginScreen = ({ navigation }) => {
 
 
   return (
-    <View>
-      <Text>Email:</Text>
-      <TextInput value={email} onChangeText={handleEmailChange} />
-      <Text>Password:</Text>
-      <TextInput secureTextEntry value={password} onChangeText={handlePasswordChange} />
+    <View style={styles.container}>
+      <Text style={styles.label}>Email:</Text>
+      <TextInput style={styles.input} value={email} onChangeText={handleEmailChange} />
+      <Text style={styles.label}>Password:</Text>
+      <TextInput style={styles.input} secureTextEntry value={password} onChangeText={handlePasswordChange} />
       <Button title="Login" onPress={handleLogin} />
       <Button title="Create Account" onPress={() => navigation.navigate('Signup')} />
     </View>
