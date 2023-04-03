@@ -7,6 +7,11 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+
+  const handleTest = () => {
+    navigation.navigate('Maps');
+  };
+
   const handleEmailChange = (text) => {
     setEmail(text);
   };
@@ -17,10 +22,10 @@ const LoginScreen = ({ navigation }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://your-backend-server.com/login', { email, password });
+      const response = await axios.post('http://localhost:3000/login', { email, password });
       const { token } = response.data;
-      // TODO: store the JWT in local storage or a cookie
-    } catch (error) {
+      Alert.alert('Success', 'You are logged in');
+    } catch (error) {1` `
       Alert.alert('Error', 'Invalid email or password');
     }
   };
@@ -34,6 +39,7 @@ const LoginScreen = ({ navigation }) => {
       <TextInput style={styles.input} secureTextEntry value={password} onChangeText={handlePasswordChange} />
       <Button title="Login" onPress={handleLogin} />
       <Button title="Create Account" onPress={() => navigation.navigate('Signup')} />
+      <Button title="Test" onPress={handleTest} />
     </View>
   );
 };

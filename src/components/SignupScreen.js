@@ -18,7 +18,7 @@ const SignupScreen = ({ navigation }) => {
   const handleSignup = () => {
     const handleSignup = async () => {
         try {
-          const response = await axios.post('http://your-backend-server.com/signup', { name, email, password });
+          const response = await axios.post('http://localhost:3000/signup', { name, email, password });
           const { token } = response.data;
           // TODO: store the JWT in local storage or a cookie
         } catch (error) {
