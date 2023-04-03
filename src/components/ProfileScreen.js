@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Button } from 'react-native';
 
 const ProfileScreen = ({ navigation }) => {
   const user = {
@@ -19,6 +19,7 @@ const ProfileScreen = ({ navigation }) => {
       <Text style={{ fontSize: 16, marginTop: 10 }}>Address: {user.address}</Text>
       <Text style={{ fontSize: 16, marginTop: 10 }}>Bio: {user.bio}</Text>
       <Image style={{ width: 150, height: 150, borderRadius: 75, marginTop: 20 }} source={{ uri: user.avatar }} />
+      <Button title="Message" onPress={() => navigation.navigate('Message')} />
     </View>
   );
 };
