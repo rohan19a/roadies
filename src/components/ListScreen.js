@@ -32,7 +32,7 @@ const ListScreen = ({ navigation }) => {
   const [users, setUsers] = useState(USER_DATA);
 
   const handlePressUser = (user) => {
-    navigation.navigate('Profile', { user });
+    navigation.navigate('ProfileViewOthers', { user: user });
   };
 
   const renderItem = ({ item }) => {
