@@ -9,6 +9,7 @@ import ProfileScreen from './src/components/ProfileScreen';
 import SignupScreen from './src/components/SignupScreen';
 import MessagingScreen from './src/components/MessagingScreen';
 import ProfileEditScreen from './src/components/ProfileEditScreen';
+import ListScreen from './src/components/ListScreen';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Message" component={MessagingScreen} />
         <Stack.Screen name="ProfileEdit" component={ProfileEditScreen} />
+        <Stack.Screen name="List" component={ListScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

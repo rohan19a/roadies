@@ -41,6 +41,7 @@ const LoginScreen = ({ navigation }) => {
       <Button title="Create Account" onPress={() => navigation.navigate('Signup')} />
       <Button title="Test" onPress={handleTest} />
       <Button title="Test" onPress={() => navigation.navigate('Profile')} />
+      <Button title="Test" onPress={() => navigation.navigate('List')} />
     </View>
   );
 };
