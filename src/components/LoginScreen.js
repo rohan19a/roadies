@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
-import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+import styles from './styleSheets/styles';
 import axios from 'axios';
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [isError, setIsError] = useState(false);
 
   const handleEmailChange = (text) => {
     setEmail(text);
@@ -14,17 +16,31 @@ const LoginScreen = ({ navigation }) => {
 
   const handlePasswordChange = (text) => {
     setPassword(text);
+    setIsError(false);
   };
 
   const handleLogin = async () => {
-    if (email === 'Test' && password === 'Test') {
-      navigation.navigate('Home');
-      return;
+    if (email === '1' && password === '1') {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Home' }],
+      });
     } else if (email.length === 0 || password.length === 0) {
-      Alert.alert('Error', 'Invalid email or password');
-      return;
+      setIsError(true);
+    } else {
+      setIsError(true);
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('beforeRemove', (e) => {
+      if (e.data.action.type === 'GO_BACK') {
+        e.preventDefault();
+      }
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
@@ -41,6 +57,9 @@ const LoginScreen = ({ navigation }) => {
         value={password}
         onChangeText={handlePasswordChange}
       />
+      {isError && (
+        <Text style={styles.errorText}>Incorrect password. Please try again.</Text>
+      )}
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
@@ -53,22 +72,5 @@ const LoginScreen = ({ navigation }) => {
     </View>
   );
 };
-
-/*<TouchableOpacity style={styles.button} onPress={handleTest}>
-<Text style={styles.buttonText}>Test</Text>
-</TouchableOpacity>
-<TouchableOpacity
-style={styles.button}
-onPress={() => navigation.navigate('Profile')}
->
-<Text style={styles.buttonText}>Test</Text>
-</TouchableOpacity>
-<TouchableOpacity
-style={styles.button}
-onPress={() => navigation.navigate('List')}
->
-<Text style={styles.buttonText}>Test</Text>
-</TouchableOpacity> */
-
 
 export default LoginScreen;

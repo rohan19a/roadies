@@ -6,7 +6,7 @@ import HomeScreen from './src/components/HomeScreen';
 import LoginScreen from './src/components/LoginScreen';
 import MapScreen from './src/components/MapScreen';
 import ProfileScreen from './src/components/ProfileScreen';
-import SignupScreen from './src/components/SignupScreen';
+import SignupScreen from './src/components/Signup/SignupScreen';
 import MessagingScreen from './src/components/MessagingScreen';
 import ProfileEditScreen from './src/components/ProfileEditScreen';
 import ListScreen from './src/components/ListScreen';
