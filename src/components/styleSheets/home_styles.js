@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const home_style = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FFDAB9',
   },
   settingsButton: {
     position: 'absolute',
@@ -74,7 +74,7 @@ const home_style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: 'white',
-    paddingVertical: 8,
+    paddingVertical: 20,
     paddingHorizontal: 16,
   },
   navBarItem: {

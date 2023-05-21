@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Image, Button } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
+import home_style from './styleSheets/profile_styles';
 
 const ProfileScreen = ({ navigation }) => {
   const [user, setUser] = useState({
@@ -16,15 +17,19 @@ const ProfileScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 24, fontWeight: 'bold' }}>{user.name}</Text>
-      <Text style={{ fontSize: 16, marginTop: 10 }}>Age: {user.age}</Text>
-      <Text style={{ fontSize: 16, marginTop: 10 }}>Email: {user.email}</Text>
-      <Text style={{ fontSize: 16, marginTop: 10 }}>Address: {user.address}</Text>
-      <Text style={{ fontSize: 16, marginTop: 10 }}>Bio: {user.bio}</Text>
-      <Image style={{ width: 150, height: 150, borderRadius: 75, marginTop: 20 }} source={{ uri: user.avatar }} />
-      <Button title="Edit Profile" onPress={() => navigation.navigate('ProfileEdit', { user: user, onSave: handleSave })} />
-      <Button title="Message" onPress={() => navigation.navigate('Message')} />
+    <View style={home_style.container}>
+      <Text style={home_style.heading}>{user.name}</Text>
+      <Image style={home_style.avatar} source={{ uri: user.avatar }} />
+      <Text style={home_style.info}>Age: {user.age}</Text>
+      <Text style={home_style.info}>Email: {user.email}</Text>
+      <Text style={home_style.info}>Address: {user.address}</Text>
+      <Text style={home_style.bio}>{user.bio}</Text>
+      <TouchableOpacity style={home_style.button} onPress={() => navigation.navigate('ProfileEdit', { user: user, onSave: handleSave })}>
+        <Text style={home_style.buttonText}>Edit Profile</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={home_style.button} onPress={() => navigation.navigate('Message')}>
+        <Text style={home_style.buttonText}>Message</Text>
+      </TouchableOpacity>
     </View>
   );
 };

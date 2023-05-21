@@ -74,15 +74,15 @@ const LocationInputScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navBarItem}
-          onPress={() => navigation.navigate('Profile')}
-        >
-          <Text style={styles.navBarItemText}>Profile</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.navBarItem}
           onPress={() => navigation.navigate('List')}
         >
           <Text style={styles.navBarItemText}>List</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.navBarItem}
+          onPress={() => navigation.navigate('Profile')}
+        >
+          <Text style={styles.navBarItemText}>Profile</Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -5,6 +5,7 @@ import SignupScreen from '../components/Signup/SignupScreen';
 import ProfileViewScreen from '../components/ProfileViewScreen';
 import HomeScreen from '../components/HomeScreen';
 import ProfileScreen from '../components/ProfileScreen';
+import RequestPaymentScreen from '../components/Signup/RequestPaymentScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigator = () => {
       <Stack.Screen name="ProfileView" component={ProfileViewScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="RequestPaymentScreen" component={RequestPaymentScreen} />
     </Stack.Navigator>
   );
 };
