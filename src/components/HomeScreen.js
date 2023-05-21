@@ -15,6 +15,12 @@ const LocationInputScreen = () => {
 
   const handleFindMatches = () => {
     // TODO: send currentLocation and workLocation to backend and receive matched users
+    var currentLocation = navigator.geolocation.getCurrentPosition(function(position) {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+    }
+    );
+    var worklocation = self.workLocation;
   };
 
   return (

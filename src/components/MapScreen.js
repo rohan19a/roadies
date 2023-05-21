@@ -11,6 +11,8 @@ const MapScreen = () => {
         { latitude: 37.78765, longitude: -122.4318 },
         { latitude: 37.78735, longitude: -122.4315 },
       ];
+
+
       
   
     return (
