@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from './styleSheets/home_styles';
+import styles from '../styleSheets/home_styles';
 
 const LocationInputScreen = () => {
   const [currentLocation, setCurrentLocation] = useState('');

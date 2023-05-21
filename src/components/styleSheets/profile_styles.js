@@ -5,6 +5,7 @@ const profile_styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#FFDAB9',
   },
   name: {
     fontSize: 24,

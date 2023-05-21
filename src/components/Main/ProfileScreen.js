@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import home_style from './styleSheets/profile_styles';
+import home_style from '../styleSheets/profile_styles';
 
 const ProfileScreen = ({ navigation }) => {
   const [user, setUser] = useState({

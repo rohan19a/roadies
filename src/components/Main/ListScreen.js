@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
+import home_styles from '../styleSheets/home_styles';
 
 const USER_DATA = {
   user1: {
@@ -39,20 +40,36 @@ const ListScreen = ({ navigation }) => {
     const user = users[item];
     return (
       <TouchableOpacity onPress={() => handlePressUser(user)}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', padding: 10 }}>
-          <Image source={{ uri: user.avatar }} style={{ width: 50, height: 50, borderRadius: 25 }} />
-          <Text style={{ marginLeft: 10, fontSize: 18 }}>{user.name}</Text>
+        <View style={home_styles.listItem}>
+          <Image source={{ uri: user.avatar }} style={home_styles.avatar} />
+          <Text style={home_styles.userName}>{user.name}</Text>
         </View>
       </TouchableOpacity>
     );
   };
 
   return (
-    <FlatList
-      data={Object.keys(users)}
-      renderItem={renderItem}
-      keyExtractor={(item) => item}
-    />
+    <View style={home_styles.container}>
+      <FlatList
+        data={Object.keys(users)}
+        renderItem={renderItem}
+        keyExtractor={(item) => item}
+      />
+      <View style={home_styles.selectionBar}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Text style={home_styles.selectionBarButton}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Maps')}>
+          <Text style={home_styles.selectionBarButton}>Maps</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+          <Text style={home_styles.selectionBarButton}>Profile</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('List')}>
+          <Text style={home_styles.selectionBarButton}>List</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 };
 

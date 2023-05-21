@@ -26,37 +26,37 @@ const RequestPaymentScreen = () => {
   };
 
   return (
-    <View style={request_payment_styles.container}>
-      <Text style={request_payment_styles.title}>Request Payment</Text>
-      <View style={request_payment_styles.inputContainer}>
-        <Text style={request_payment_styles.label}>Card Number:</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Request Payment</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Card Number:</Text>
         <TextInput
-          style={request_payment_styles.input}
+          style={styles.input}
           value={cardNumber}
           onChangeText={handleCardNumberChange}
           placeholder="Enter card number"
         />
       </View>
-      <View style={request_payment_styles.inputContainer}>
-        <Text style={request_payment_styles.label}>Expiration Date:</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Expiration Date:</Text>
         <TextInput
-          style={request_payment_styles.input}
+          style={styles.input}
           value={expirationDate}
           onChangeText={handleExpirationDateChange}
           placeholder="MM/YY"
         />
       </View>
-      <View style={request_payment_styles.inputContainer}>
-        <Text style={request_payment_styles.label}>CVV:</Text>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>CVV:</Text>
         <TextInput
-          style={request_payment_styles.input}
+          style={styles.input}
           value={cvv}
           onChangeText={handleCVVChange}
           placeholder="Enter CVV"
         />
       </View>
-      <TouchableOpacity style={request_payment_styles.button} onPress={handleSubmit}>
-        <Text style={request_payment_styles.buttonText}>Submit Payment</Text>
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+        <Text style={styles.buttonText}>Submit Payment</Text>
       </TouchableOpacity>
     </View>
   );
